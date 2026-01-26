@@ -9,17 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#F6F2EC',
-        olive: '#A8B2A1',
-        gold: '#C9B37E',
-        warmgray: '#8E8A84',
+        // Nueva paleta de colores - Ser Consciente
+        primary: '#FF8C00',      // Naranja Vibrante (Primario)
+        amber: '#FFB347',        // Ámbar Suave (Secundario)
+        gold: '#FFCC33',         // Oro Claro (Iluminaciones)
+        burnt: '#E65100',        // Naranja Quemado (Profundidad)
+        cream: '#FFF9F0',        // Fondo cálido
+        warmgray: '#4A4A4A',     // Texto principal
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
+        buffalo: ['Buffalo', 'serif'],
         sans: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',
+      },
+      backgroundImage: {
+        'gradient-warm': 'linear-gradient(135deg, #FF8C00 0%, #FFB347 100%)',
+        'gradient-soft': 'linear-gradient(135deg, #FFB347 0%, #FFCC33 100%)',
       },
     },
   },

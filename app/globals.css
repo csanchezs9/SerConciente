@@ -1,8 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fuente Buffalo - Si tienes el archivo local, descomenta y ajusta la ruta */
+@font-face {
+  font-family: 'Buffalo';
+  src: url('/fonts/Buffalo.woff2') format('woff2'),
+       url('/fonts/Buffalo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
   margin: 0;
@@ -16,12 +26,28 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #F6F2EC;
-  color: #8E8A84;
+  background-color: #FFF9F0;
+  color: #4A4A4A;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Buffalo', serif;
+}
+
+/* Degradados suaves para elementos */
+.gradient-warm {
+  background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, #FFB347 0%, #FFCC33 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF8C00 0%, #E65100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @layer utilities {
