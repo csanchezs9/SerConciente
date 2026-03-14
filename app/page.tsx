@@ -2,29 +2,26 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { 
-  Heart, 
-  Users, 
-  MessageCircle, 
-  Sparkles, 
-  Instagram, 
-  Linkedin, 
+import {
+  MessageCircle,
+  Sparkles,
+  Instagram,
+  Linkedin,
   Mail,
   ArrowRight,
   Star,
   ChevronLeft,
   ChevronRight,
-  Briefcase,
   Menu,
   X,
   Phone
 } from "lucide-react"
 import { useState } from "react"
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
 } from "@/components/ui/accordion"
 
 // Animaciones
@@ -72,24 +69,24 @@ export default function Home() {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
-  // Los 3 programas principales
+  // Los 3 programas principales con imágenes
   const programas = [
     {
-      icon: <Heart className="w-10 h-10" />,
+      image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop",
       title: "La Llave",
       subtitle: "Vínculos del Amor",
       description: "La llave para fortalecer los vínculos del amor. Un programa transformador diseñado para cultivar relaciones conscientes, auténticas y profundas en pareja, familia y amigos.",
       color: "from-primary to-amber",
     },
     {
-      icon: <Briefcase className="w-10 h-10" />,
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop",
       title: "Relaciones Honorables",
       subtitle: "Ventas Conscientes",
       description: "Transforma tus relaciones comerciales en vínculos genuinos. Aprende a vender desde la autenticidad, creando conexiones duraderas con tus clientes.",
       color: "from-amber to-gold",
     },
     {
-      icon: <Users className="w-10 h-10" />,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
       title: "Líderes que Conversan",
       subtitle: "Transformación Organizacional",
       description: "Desarrolla un liderazgo consciente que inspire y transforme. Equipos de alto desempeño basados en la comunicación auténtica y la empatía.",
@@ -127,10 +124,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <Image 
-              src="/header (1).png" 
-              alt="Ser Consciente" 
-              width={300} 
+            <Image
+              src="/header (1).png"
+              alt="Ser Consciente"
+              width={300}
               height={80}
               className="h-16 w-auto object-contain"
             />
@@ -145,15 +142,15 @@ export default function Home() {
           </nav>
 
           {/* Botón de Contacto */}
-          <a 
-            href="#contacto" 
+          <a
+            href="#contacto"
             className="hidden md:inline-flex bg-gradient-to-r from-primary to-amber text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-primary/30 transition-all"
           >
             Contactar
           </a>
 
           {/* Menú Móvil */}
-          <button 
+          <button
             className="lg:hidden text-warmgray"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -163,7 +160,7 @@ export default function Home() {
 
         {/* Menú Móvil Expandido */}
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="lg:hidden bg-cream border-t border-primary/10 px-6 py-4"
@@ -173,8 +170,8 @@ export default function Home() {
               <a href="#sobre-mi" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-primary transition-colors">Sobre Mí</a>
               <a href="#programas" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-primary transition-colors">Programas</a>
               <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-primary transition-colors">Preguntas Frecuentes</a>
-              <a 
-                href="#contacto" 
+              <a
+                href="#contacto"
                 onClick={() => setMobileMenuOpen(false)}
                 className="bg-gradient-to-r from-primary to-amber text-white px-6 py-3 rounded-full text-sm font-medium text-center"
               >
@@ -200,18 +197,18 @@ export default function Home() {
               Transforma tu <span className="gradient-text">Conciencia</span>
             </h1>
             <p className="text-warmgray/80 text-lg mb-8 max-w-md leading-relaxed">
-              Conexión y transformación a través de la conciencia. Desde el SER hacia el HACER, 
+              Conexión y transformación a través de la conciencia. Desde el SER hacia el HACER,
               descubre programas que elevan tu vida personal, relacional y profesional.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a 
+              <a
                 href="#programas"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-amber text-white px-8 py-4 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-primary/30 transition-all hover:gap-3"
               >
                 Explorar Programas
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a 
+              <a
                 href="#ser-consciente"
                 className="inline-flex items-center gap-2 border-2 border-burnt text-burnt px-8 py-4 rounded-full text-sm font-medium hover:bg-burnt hover:text-white transition-colors"
               >
@@ -219,77 +216,211 @@ export default function Home() {
               </a>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Visual decorativo */}
-            <div className="aspect-[4/5] bg-gradient-to-br from-primary/10 to-amber/20 rounded-3xl flex items-center justify-center border-2 border-primary/10 p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-amber/10" />
-              <div className="relative z-10 text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-amber rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Sparkles className="w-12 h-12 text-white" />
-                </div>
-                <p className="font-buffalo text-3xl text-warmgray">Del SER</p>
-                <p className="font-buffalo text-3xl text-primary">al HACER</p>
-              </div>
+            {/* Imagen Real de Psicóloga */}
+            <div className="aspect-[4/5] rounded-3xl relative overflow-hidden group">
+              {/* Imagen principal */}
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&crop=faces"
+                alt="Gloria Salgado - Coach Ontológica"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Overlay gradiente suave */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+              {/* Badge flotante */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.6 }}
+                className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg"
+              >
+                <p className="font-buffalo text-xl text-warmgray">Del <span className="text-primary">SER</span> al <span className="text-burnt">HACER</span></p>
+                <p className="text-sm text-warmgray/70 mt-1">Transformación consciente</p>
+              </motion.div>
             </div>
-            {/* Decorative elements con nuevos colores */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-amber/30 rounded-full blur-2xl" />
-            <div className="absolute top-1/2 -right-3 w-16 h-16 bg-gold/40 rounded-full blur-xl" />
+            {/* Decorative elements con animación breathing */}
+            <motion.div
+              animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-full blur-2xl"
+            />
+            <motion.div
+              animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.4, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -top-6 -right-6 w-24 h-24 bg-amber rounded-full blur-2xl"
+            />
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.5, 0.4] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-1/2 -right-3 w-16 h-16 bg-gold rounded-full blur-xl"
+            />
           </motion.div>
         </div>
       </section>
 
-      {/* Sección Ser Consciente - Nueva */}
-      <section id="ser-consciente" className="py-24 bg-gradient-to-br from-primary/5 to-amber/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.h2 variants={fadeInUp} className="font-buffalo text-4xl md:text-5xl lg:text-6xl text-warmgray mb-6">
-              Conexión y transformación a través de la <span className="text-primary">conciencia</span>
-            </motion.h2>
-            
-            <motion.p variants={fadeInUp} className="text-warmgray/80 text-xl leading-relaxed mb-8">
-              Ser Consciente es un espacio de transformación personal donde cada programa nace 
-              con el propósito de elevar la conciencia. Creemos en el poder de la conexión auténtica 
-              y en la transformación que surge cuando trabajamos desde el <strong className="text-primary">SER</strong> hacia 
-              el <strong className="text-primary">HACER</strong>.
-            </motion.p>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-8 mt-12">
-              <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-primary/10">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-buffalo text-xl text-warmgray mb-2">Amor Consciente</h3>
-                <p className="text-warmgray/70 text-sm">Relaciones desde el corazón y la autenticidad.</p>
-              </div>
-              <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-amber/10">
-                <div className="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-6 h-6 text-amber" />
-                </div>
-                <h3 className="font-buffalo text-xl text-warmgray mb-2">Comunicación Auténtica</h3>
-                <p className="text-warmgray/70 text-sm">Conversaciones que transforman y conectan.</p>
-              </div>
-              <div className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-gold/20">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Sparkles className="w-6 h-6 text-burnt" />
-                </div>
-                <h3 className="font-buffalo text-xl text-warmgray mb-2">Transformación Profunda</h3>
-                <p className="text-warmgray/70 text-sm">Cambios duraderos desde la esencia del ser.</p>
-              </div>
-            </motion.div>
+
+      {/* Sección Ser Consciente - Diseño Sereno y Elegante */}
+      <section id="ser-consciente" className="py-32 bg-white relative overflow-hidden">
+        {/* Elementos decorativos sutiles de fondo */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-amber/5 to-transparent" />
+        </div>
+
+        {/* Línea decorativa vertical animada */}
+        <motion.div
+          initial={{ height: 0 }}
+          whileInView={{ height: "100%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute left-1/2 top-0 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent"
+        />
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          {/* Header con mucho aire */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-center mb-24"
+          >
+            <p className="text-primary/70 text-sm uppercase tracking-[0.3em] mb-6 font-light">
+              Filosofía
+            </p>
+            <h2 className="font-buffalo text-4xl md:text-5xl lg:text-6xl text-warmgray mb-8 leading-tight">
+              Un espacio para <br />
+              <span className="text-primary">reconectar contigo</span>
+            </h2>
+            <div className="w-16 h-px bg-primary/30 mx-auto" />
           </motion.div>
+
+          {/* Grid Principal - Diseño limpio y espacioso */}
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
+
+            {/* Columna de imagen */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden relative">
+                <img
+                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=750&fit=crop"
+                  alt="Meditación y tranquilidad"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-warmgray/20 to-transparent" />
+              </div>
+              {/* Elemento decorativo flotante */}
+              <motion.div
+                animate={{ y: [-8, 8, -8] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-8 -right-8 w-32 h-32 bg-cream rounded-2xl shadow-xl flex items-center justify-center"
+              >
+                <div className="text-center">
+                  <p className="font-buffalo text-3xl text-primary">15+</p>
+                  <p className="text-warmgray/60 text-xs">años</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Columna de contenido */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="font-buffalo text-3xl text-warmgray mb-4">
+                  Del Ser al Hacer
+                </h3>
+                <p className="text-warmgray/70 leading-relaxed text-lg">
+                  La transformación auténtica nace del autoconocimiento profundo.
+                  En Ser Consciente, creemos que el cambio verdadero surge cuando
+                  primero comprendemos quiénes somos en esencia, para luego actuar
+                  desde esa verdad interior.
+                </p>
+              </div>
+
+              <div className="w-12 h-px bg-primary/20" />
+
+              <blockquote className="border-l-2 border-primary/30 pl-6 py-2">
+                <p className="text-warmgray/80 italic text-lg leading-relaxed">
+                  "La conciencia es el primer paso hacia la libertad interior"
+                </p>
+                <cite className="text-primary text-sm mt-3 block not-italic">
+                  — Gloria Salgado
+                </cite>
+              </blockquote>
+            </motion.div>
+          </div>
+
+          {/* Tres Pilares - Cards minimalistas */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="grid md:grid-cols-3 gap-8 lg:gap-12"
+          >
+            {/* Pilar 1 */}
+            <div className="group">
+              <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent mb-8 group-hover:from-primary/60 transition-all duration-500" />
+              <div className="flex items-start gap-4 mb-4">
+                <span className="text-primary/40 font-buffalo text-4xl">01</span>
+              </div>
+              <h4 className="font-buffalo text-xl text-warmgray mb-3 group-hover:text-primary transition-colors duration-300">
+                Conexión Interior
+              </h4>
+              <p className="text-warmgray/60 text-sm leading-relaxed">
+                Reconecta con tu esencia a través de prácticas de introspección
+                y autoconocimiento guiado.
+              </p>
+            </div>
+
+            {/* Pilar 2 */}
+            <div className="group">
+              <div className="h-px w-full bg-gradient-to-r from-amber/30 to-transparent mb-8 group-hover:from-amber/60 transition-all duration-500" />
+              <div className="flex items-start gap-4 mb-4">
+                <span className="text-amber/40 font-buffalo text-4xl">02</span>
+              </div>
+              <h4 className="font-buffalo text-xl text-warmgray mb-3 group-hover:text-amber transition-colors duration-300">
+                Comunicación Consciente
+              </h4>
+              <p className="text-warmgray/60 text-sm leading-relaxed">
+                Aprende a expresarte desde la autenticidad y a escuchar
+                con empatía genuina.
+              </p>
+            </div>
+
+            {/* Pilar 3 */}
+            <div className="group">
+              <div className="h-px w-full bg-gradient-to-r from-burnt/30 to-transparent mb-8 group-hover:from-burnt/60 transition-all duration-500" />
+              <div className="flex items-start gap-4 mb-4">
+                <span className="text-burnt/40 font-buffalo text-4xl">03</span>
+              </div>
+              <h4 className="font-buffalo text-xl text-warmgray mb-3 group-hover:text-burnt transition-colors duration-300">
+                Transformación Duradera
+              </h4>
+              <p className="text-warmgray/60 text-sm leading-relaxed">
+                Integra los aprendizajes de manera profunda para generar
+                cambios que permanezcan.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
@@ -304,13 +435,20 @@ export default function Home() {
             className="grid md:grid-cols-2 gap-16 items-center"
           >
             <motion.div variants={fadeInUp} className="order-2 md:order-1">
-              {/* Placeholder para imagen */}
-              <div className="aspect-square bg-gradient-to-br from-primary/10 to-amber/10 rounded-3xl flex items-center justify-center border-2 border-primary/20 relative overflow-hidden">
-                <span className="text-primary/40 font-buffalo text-2xl">Foto Gloria</span>
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-primary/20 to-transparent" />
+              {/* Imagen de Gloria */}
+              <div className="aspect-square rounded-3xl relative overflow-hidden group shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&h=600&fit=crop&crop=faces"
+                  alt="Gloria Salgado - Coach Ontológica"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+                {/* Decoración sutil */}
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-amber/30 rounded-full blur-xl" />
+                <div className="absolute -top-4 -left-4 w-20 h-20 bg-primary/20 rounded-full blur-xl" />
               </div>
             </motion.div>
-            
+
             <motion.div variants={fadeInUp} className="order-1 md:order-2">
               <p className="text-primary text-sm uppercase tracking-widest mb-4 font-medium">
                 Sobre Mí
@@ -323,16 +461,16 @@ export default function Home() {
               </p>
               <div className="space-y-4 text-warmgray/80 leading-relaxed">
                 <p>
-                  Gloria Salgado es una Coach Ontológica certificada con más de <strong className="text-warmgray">15 años de experiencia</strong> transformando vidas y relaciones. 
+                  Gloria Salgado es una Coach Ontológica certificada con más de <strong className="text-warmgray">15 años de experiencia</strong> transformando vidas y relaciones.
                   Su enfoque ontológico único combina la profundidad del ser con herramientas prácticas de transformación.
                 </p>
                 <p>
-                  Ha acompañado a cientos de personas en su camino hacia relaciones más auténticas, 
-                  liderazgo consciente y comunicación efectiva. Su metodología experiencial permite 
+                  Ha acompañado a cientos de personas en su camino hacia relaciones más auténticas,
+                  liderazgo consciente y comunicación efectiva. Su metodología experiencial permite
                   integrar los aprendizajes de manera profunda y duradera.
                 </p>
                 <p>
-                  Fundadora de Ser Consciente, Gloria cree firmemente que la transformación personal 
+                  Fundadora de Ser Consciente, Gloria cree firmemente que la transformación personal
                   es el primer paso hacia un mundo más conectado y empático.
                 </p>
               </div>
@@ -372,7 +510,7 @@ export default function Home() {
               Tres pilares de <span className="text-primary">transformación</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-warmgray/70 text-lg max-w-2xl mx-auto">
-              Programas diseñados para elevar tu conciencia en todas las áreas de tu vida. 
+              Programas diseñados para elevar tu conciencia en todas las áreas de tu vida.
               Desde el amor hasta el liderazgo, cada programa es un viaje de transformación.
             </motion.p>
           </motion.div>
@@ -390,13 +528,17 @@ export default function Home() {
                 variants={fadeInUp}
                 className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                {/* Header con gradiente */}
-                <div className={`h-32 bg-gradient-to-r ${programa.color} flex items-center justify-center`}>
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white">
-                    {programa.icon}
-                  </div>
+                {/* Header con imagen real */}
+                <div className="h-48 relative overflow-hidden">
+                  <img
+                    src={programa.image}
+                    alt={programa.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${programa.color} opacity-40 mix-blend-multiply`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 </div>
-                
+
                 <div className="p-8">
                   <p className="text-primary text-xs uppercase tracking-widest mb-2 font-medium">
                     {programa.subtitle}
@@ -407,7 +549,7 @@ export default function Home() {
                   <p className="text-warmgray/70 leading-relaxed mb-6">
                     {programa.description}
                   </p>
-                  <a 
+                  <a
                     href="#contacto"
                     className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
                   >
@@ -537,11 +679,11 @@ export default function Home() {
               Comienza tu Transformación Hoy
             </h2>
             <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto">
-              Da el primer paso hacia una vida más consciente y conectada. 
+              Da el primer paso hacia una vida más consciente y conectada.
               Estoy aquí para acompañarte en este camino de transformación personal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <a
                 href="https://wa.me/573004817101?text=Hola%20Gloria%2C%20me%20gustaría%20recibir%20información%20sobre%20los%20programas%20de%20Ser%20Consciente."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -550,7 +692,7 @@ export default function Home() {
                 <MessageCircle className="w-4 h-4" />
                 Escribir un mensaje
               </a>
-              <a 
+              <a
                 href="https://wa.me/573004817101?text=Hola%20Gloria%2C%20quisiera%20agendar%20una%20llamada%20para%20conocer%20más%20sobre%20Ser%20Consciente."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -568,10 +710,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           {/* Logo Centrado */}
           <div className="flex justify-center mb-12">
-            <Image 
-              src="/footer (1).png" 
-              alt="Ser Consciente" 
-              width={600} 
+            <Image
+              src="/footer (1).png"
+              alt="Ser Consciente"
+              width={600}
               height={200}
               className="h-44 w-auto object-contain"
             />
@@ -596,7 +738,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-buffalo text-xl text-warmgray mb-4">Información</h4>
               <p className="text-warmgray/70 text-sm leading-relaxed">
@@ -607,32 +749,32 @@ export default function Home() {
 
           {/* Redes Sociales Centradas */}
           <div className="flex justify-center gap-3 mb-12">
-            <a 
-              href="https://instagram.com" 
-              target="_blank" 
+            <a
+              href="https://instagram.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-amber flex items-center justify-center hover:shadow-lg hover:shadow-primary/30 transition-all text-white"
             >
               <Instagram className="w-5 h-5" />
             </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-amber flex items-center justify-center hover:shadow-lg hover:shadow-primary/30 transition-all text-white"
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a 
-              href="https://wa.me/573004817101?text=Hola%20Gloria%2C%20me%20gustaría%20recibir%20información%20sobre%20los%20programas%20de%20Ser%20Consciente.%20%F0%9F%8C%B8" 
-              target="_blank" 
+            <a
+              href="https://wa.me/573004817101?text=Hola%20Gloria%2C%20me%20gustaría%20recibir%20información%20sobre%20los%20programas%20de%20Ser%20Consciente.%20%F0%9F%8C%B8"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-amber flex items-center justify-center hover:shadow-lg hover:shadow-primary/30 transition-all text-white"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
           </div>
-          
+
           {/* Copyright */}
           <div className="border-t border-primary/10 pt-8 text-center">
             <p className="text-sm text-warmgray/60">
